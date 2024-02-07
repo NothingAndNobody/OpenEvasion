@@ -1,7 +1,6 @@
-# Welcome to Salt
+# OpenEvasion
 
-Salt is a Repo with a lot of games all in HTML code!
+OpenEvasion is a free and open-source repository and website full of gaames and proxy unbockers.
 
-IMPORTANT
-
-I did not code/make any of these games. All of the games were found on GitHub. although i did code all "index.html" related files
+IMPORTANT NOTE:
+Many of these games aren't actually programmed by me, I only curate them into a clean UI for End-Users.
