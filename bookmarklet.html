@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />  
+
+	<!-- add icon link -->
+	<link rel="icon" href= 
+"img/salt.png"
+		type="image/x-icon"> 
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style-other.css" />
+    <link rel="stylesheet" href="style/Nav.css" />
+    <title>Bookmarklet Generator | Salt</title>
+    <style>
+    body {
+      margin: 20px;
+      background-color: #c6b8f9; /* Replace with your preferred color code */
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+    }
+
+    button {
+      display: block;
+      margin-top: 10px;
+      padding: 8px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<a href="other.html" class="button bkbutton indexb b1">Back</a>
+<body>
+  <h1>Bookmarklet Generator</h1>
+  <p>Enter your JavaScript code below:</p>
+  <textarea id="jsCode"></textarea>
+  <button onclick="generateBookmarklet()">Generate Bookmarklet</button>
+  <p id="bookmarkletResult"></p>
+
+  <script>
+    function generateBookmarklet() {
+      var jsCode = document.getElementById('jsCode').value;
+      var bookmarkletCode = 'javascript:(function(){' + encodeURIComponent(jsCode) + '})();';
+      document.getElementById('bookmarkletResult').innerText = 'Bookmarklet Code:\n\n' + bookmarkletCode;
+    }
+  </script>
+</body>
+<img id="bottomRightImage" src="img/salt.png" alt="Bottom Left Image">
+</html>
