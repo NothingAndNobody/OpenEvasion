@@ -2,18 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML File List</title>
 </head>
 <body>
-    <h1>HTML Files</h1>
-    <ul>
-        <!-- Read the list of HTML files from html_files.txt -->
-        <?php
-        $htmlFiles = file("html_files.txt", FILE_IGNORE_NEW_LINES);
-        foreach ($htmlFiles as $file) {
-            echo "<li><a href=\"$file\">$file</a></li>";
-        }
-        ?>
-    </ul>
+    <h1>List of HTML Files</h1>
+    <ul id="fileList"></ul>
+
+    <script>
+        // Read the contents of the output.txt file
+        fetch('ogutput.txt')
+            .then(response => response.text())
+            .then(data => {
+                const fileList = data.split('\n'); // Split by newline character
+                const fileListElement = document.getElementById('fileList');
+
+                fileList.forEach(filePath => {
+                    if (filePath.trim()) { // Ignore empty lines
+                        const fileName = filePath.split('/').pop(); // Extract the file name
+                        const link = document.createElement('a');
+                        link.href = filePath;
+                        link.textContent = fileName;
+
+                        const listItem = document.createElement('li');
+                        listItem.appendChild(link);
+                        fileListElement.appendChild(listItem);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching file:', error));
+    </script>
 </body>
 </html>
